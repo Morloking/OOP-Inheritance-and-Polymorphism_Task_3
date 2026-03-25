@@ -8,9 +8,9 @@ public:
 	int getSides() const { return amountSides; }
 	virtual void printInfo() const {
 		std::cout << getName() << ":\n"
-			<< (check() ? "Ïðàâèëüíàÿ\n" : "Íåïðàâèëüíàÿ\n")
-			<< "Êîëè÷åñòâî ñòîðîí: " << getSides() << "\n";
-		if (nameF == "Ôèãóðà") { std::cout << "\n"; } // -_- êîñòûëü äëÿ ñîîòâåòñòâèÿ ïðèìåðó
+			<< (check() ? "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ\n" : "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ\n")
+			<< "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½: " << getSides() << "\n";
+		if (nameF == "Ð¤Ð¸Ð³ÑƒÑ€Ð°") { std::cout << "\n"; } // -_- ÐºÐ¾ÑÑ‚Ñ‹Ð»ÑŒ Ð´Ð»Ñ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ñ Ð¿Ñ€Ð¸Ð¼ÐµÑ€Ñƒ
 	}
 	virtual std::string getLengths() const { return ""; }
 	virtual std::string getCorners() const { return ""; }
@@ -22,19 +22,19 @@ protected:
 		amountSides(sides), nameF(name) {}
 private:
 	int amountSides{ 0 };
-	std::string nameF{ "Ôèãóðà" };
+	std::string nameF{ "Ð¤Ð¸Ð³ÑƒÑ€Ð°" };
 };
 
 class Triangle :
 	public Figure {
 public:
-	Triangle(int l1, int l2, int l3, int c1, int c2, int c3) :       //ïóáëè÷íûé êîíñòðóêòîð äëÿ ñîçäàíèÿ îáúåêòîâ îáû÷íîãî òðåóãîëüíèêà (âûçûâàåò ïðîòåêòåä êîíñòðóêòîð, íî ñ èìåíåì òðåóã)
-		Triangle(l1, l2, l3, c1, c2, c3, "Òðåóãîëüíèê") {
+	Triangle(int l1, int l2, int l3, int c1, int c2, int c3) :       //Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð´Ð»Ñ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð² Ð¾Ð±Ñ‹Ñ‡Ð½Ð¾Ð³Ð¾ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ° (Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ Ð¿Ñ€Ð¾Ñ‚ÐµÐºÑ‚ÐµÐ´ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€, Ð½Ð¾ Ñ Ð¸Ð¼ÐµÐ½ÐµÐ¼ Ñ‚Ñ€ÐµÑƒÐ³)
+		Triangle(l1, l2, l3, c1, c2, c3, "Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {
 	}
 	void printInfo() const override {
 		Figure::printInfo();
-		std::cout << "Ñòîðîíû: " << getLengths() << "\n"
-			<< "Óãëû: " << getCorners() << "\n\n";
+		std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << getLengths() << "\n"
+			<< "Ð£Ð³Ð»Ñ‹: " << getCorners() << "\n\n";
 	}
 	bool check() const override {
 		if ((cor1 + cor2 + cor3) == 180) return true;
@@ -58,12 +58,12 @@ class Quadrangle :
 	public Figure {
 public:
 	Quadrangle(int l1, int l2, int l3, int l4, int c1, int c2, int c3, int c4) :
-		Quadrangle(l1, l2, l3, l4, c1, c2, c3, c4, "×åòûð¸õóãîëüíèê") {
+		Quadrangle(l1, l2, l3, l4, c1, c2, c3, c4, "Ð§ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {
 	}
 	void printInfo() const override {
 		Figure::printInfo();
-		std::cout << "Ñòîðîíû: " << getLengths() << "\n"
-			<< "Óãëû: " << getCorners() << "\n\n";
+		std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << getLengths() << "\n"
+			<< "Ð£Ð³Ð»Ñ‹: " << getCorners() << "\n\n";
 	}
 	bool check() const override {
 		if ((cor1 + cor2 + cor3 + cor4) == 360) return true;
@@ -88,7 +88,7 @@ class RectangularTriangle :
 	public Triangle {
 public:
 	RectangularTriangle(int l1, int l2, int l3, int c1, int c2) :
-		Triangle(l1, l2, l3, c1, c2, 90, "Ïðÿìîóãîëüíûé òðåóãîëüíèê") {
+		Triangle(l1, l2, l3, c1, c2, 90, "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {
 	}
 	bool check() const override {
 		if (!Triangle::check()) return false;
@@ -100,7 +100,7 @@ class IsoscelesTriangle :
 	public Triangle {
 public:
 	IsoscelesTriangle(int l1, int l2, int c1, int c2) :
-		Triangle(l1, l2, l1, c1, c2, c1, "Ðàâíîáåäðåííûé òðåóãîëüíèê") {
+		Triangle(l1, l2, l1, c1, c2, c1, "Ð Ð°Ð²Ð½Ð¾Ð±ÐµÐ´Ñ€ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {
 	}
 	bool check() const override {
 		if (!Triangle::check()) return false;
@@ -112,7 +112,7 @@ class EquilateralTriangle :
 	public Triangle {
 public:
 	EquilateralTriangle(int l1) :
-		Triangle(l1, l1, l1, 60, 60, 60, "Ðàâíîñòîðîííèé òðåóãîëüíèê") {
+		Triangle(l1, l1, l1, 60, 60, 60, "Ð Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {
 	}
 	bool check() const override {
 		if (!Triangle::check()) return false;
@@ -125,7 +125,7 @@ class Rectangle :
 	public Quadrangle {
 public:
 	Rectangle(int l1, int l2) :
-		Quadrangle(l1, l2, l1, l2, 90, 90, 90, 90, "Ïðÿìîóãîëüíèê") {
+		Quadrangle(l1, l2, l1, l2, 90, 90, 90, 90, "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {
 	}
 	bool check() const override {
 		if (!Quadrangle::check()) return false;
@@ -137,7 +137,7 @@ class Square :
 	public Quadrangle {
 public:
 	Square(int l1) :
-		Quadrangle(l1, l1, l1, l1, 90, 90, 90, 90, "Êâàäðàò") {
+		Quadrangle(l1, l1, l1, l1, 90, 90, 90, 90, "ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚") {
 	}
 	bool check() const override {
 		if (!Quadrangle::check()) return false;
@@ -149,7 +149,7 @@ class Parallelogram :
 	public Quadrangle {
 public:
 	Parallelogram(int l1, int l2, int c1, int c2) :
-		Quadrangle(l1, l2, l1, l2, c1, c2, c1, c2, "Ïàðàëëåëîãðàìì") {
+		Quadrangle(l1, l2, l1, l2, c1, c2, c1, c2, "ÐŸÐ°Ñ€Ð°Ð»Ð»ÐµÐ»Ð¾Ð³Ñ€Ð°Ð¼Ð¼") {
 	}
 	bool check() const override {
 		if (!Quadrangle::check()) return false;
@@ -161,7 +161,7 @@ class Rhomb :
 	public Quadrangle {
 public:
 	Rhomb(int l1, int c1, int c2) :
-		Quadrangle(l1, l1, l1, l1, c1, c2, c1, c2, "Ðîìá") {
+		Quadrangle(l1, l1, l1, l1, c1, c2, c1, c2, "Ð Ð¾Ð¼Ð±") {
 	}
 	bool check() const override {
 		if (!Quadrangle::check()) return false;

@@ -19,7 +19,8 @@ public:
 	virtual ~Figure() {};
 protected:
 	Figure(int sides, std::string name) :
-		amountSides(sides), nameF(name) {}
+		amountSides(sides), nameF(name) {
+	}
 private:
 	int amountSides{ 0 };
 	std::string nameF{ "Фигура" };
@@ -111,7 +112,7 @@ public:
 class EquilateralTriangle :
 	public Triangle {
 public:
-	EquilateralTriangle(int l1) :
+	explicit EquilateralTriangle(int l1) :
 		Triangle(l1, l1, l1, 60, 60, 60, "Равносторонний треугольник") {
 	}
 	bool check() const override {
@@ -136,7 +137,7 @@ public:
 class Square :
 	public Quadrangle {
 public:
-	Square(int l1) :
+	explicit Square(int l1) :
 		Quadrangle(l1, l1, l1, l1, 90, 90, 90, 90, "Квадрат") {
 	}
 	bool check() const override {
@@ -177,7 +178,7 @@ int main() {
 	Triangle triangle(10, 20, 30, 50, 60, 70);
 	RectangularTriangle wrongRectTriangle(10, 20, 30, 50, 60);
 	RectangularTriangle correctRectTriangle(10, 20, 30, 50, 40);
-	IsoscelesTriangle isosTriangle(10, 20, 50, 60);             
+	IsoscelesTriangle isosTriangle(10, 20, 50, 60);
 	EquilateralTriangle eqTriangle(30);
 
 	Quadrangle quad(10, 20, 30, 40, 50, 60, 70, 80);
